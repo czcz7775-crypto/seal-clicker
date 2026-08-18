@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seal Clicker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bubbles"></div>
+
+    <main class="game">
+
+        <!-- TÍTULO -->
+        <header>
+            <h1>🦭 SEAL CLICKER</h1>
+
+            <div class="score">
+                🐟 <span id="peces">0</span>
+            </div>
+
+            <div class="perSecond">
+                +<span id="porSegundo">0</span> peces/segundo
+            </div>
+        </header>
+
+
+        <!-- ZONA DE LA FOCA -->
+        <section class="clickArea">
+
+            <button id="zonaClick" aria-label="Hacer clic en la foca">
+
+                <img
+                    id="foca"
+                    src="foca-cerrada.png"
+                    alt="Foca"
+                >
+
+            </button>
+
+            <p id="mensaje">
+                ¡HAZ CLIC EN LA FOCA!
+            </p>
+
+        </section>
+
+
+        <!-- TIENDA -->
+        <section class="shop">
+
+            <h2>🛒 TIENDA</h2>
+
+
+            <!-- MEJORA DE CLIC -->
+
+            <div class="upgrade">
+
+                <div>
+                    <h3>⚡ Clic mejorado</h3>
+
+                    <p>
+                        Cada clic da
+                        <strong>
+                            <span id="poderClic">1</span>
+                        </strong>
+                        pez.
+                    </p>
+                </div>
+
+                <button id="comprarClic">
+                    Comprar
+                    <br>
+                    🐟 <span id="precioClic">25</span>
+                </button>
+
+            </div>
+
+
+            <!-- AUTO CLICK -->
+
+            <div class="upgrade">
+
+                <div>
+                    <h3>🤖 Foca pescadora</h3>
+
+                    <p>
+                        Produce
+                        <strong>1 pez/segundo</strong>.
+                    </p>
+
+                    <p>
+                        Compradas:
+                        <span id="autoNivel">0</span>
+                    </p>
+                </div>
+
+                <button id="comprarAuto">
+                    Comprar
+                    <br>
+                    🐟 <span id="precioAuto">100</span>
+                </button>
+
+            </div>
+
+
+            <!-- MULTIPLICADOR -->
+
+            <div class="upgrade">
+
+                <div>
+                    <h3>🔥 Multiplicador</h3>
+
+                    <p>
+                        Aumenta los peces obtenidos.
+                    </p>
+
+                    <p>
+                        Multiplicador:
+                        x<span id="multiplicador">1</span>
+                    </p>
+                </div>
+
+                <button id="comprarMulti">
+                    Comprar
+                    <br>
+                    🐟 <span id="precioMulti">500</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="stats">
+
+            <h2>📊 ESTADÍSTICAS</h2>
+
+            <p>
+                Clics totales:
+                <strong id="clicsTotales">0</strong>
+            </p>
+
+            <p>
+                Peces totales:
+                <strong id="pecesTotales">0</strong>
+            </p>
+
+            <p>
+                Mejor combo:
+                <strong id="mejorCombo">0</strong>
+            </p>
+
+        </section>
+
+
+        <!-- BOTÓN RESET -->
+
+        <button id="reset" class="reset">
+            🗑️ Reiniciar partida
+        </button>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

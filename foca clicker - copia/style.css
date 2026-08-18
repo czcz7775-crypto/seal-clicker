@@ -1,0 +1,533 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.25) 0px,
+            rgba(255,255,255,0.25) 3px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,0.15) 0px,
+            rgba(255,255,255,0.15) 5px,
+            transparent 6px
+        ),
+
+        linear-gradient(
+            #65d7ff,
+            #1a9bd5 45%,
+            #07558e 100%
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* CONTENEDOR */
+
+.game {
+
+    width: min(900px, 94vw);
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 25px 0 50px;
+}
+
+
+/* TÍTULO */
+
+h1 {
+
+    margin: 5px 0 5px;
+
+    font-size: clamp(
+        35px,
+        7vw,
+        70px
+    );
+
+    font-weight: 900;
+
+    text-shadow:
+
+        0 4px 0 #064c7c,
+
+        0 8px 15px rgba(0,0,0,0.35);
+}
+
+
+/* CONTADOR */
+
+.score {
+
+    display: inline-block;
+
+    padding: 10px 25px;
+
+    margin-top: 5px;
+
+    border-radius: 20px;
+
+    background: rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(5px);
+
+    font-size: clamp(
+        35px,
+        7vw,
+        60px
+    );
+
+    font-weight: 900;
+
+    text-shadow: 0 3px 5px rgba(0,0,0,0.4);
+}
+
+
+.perSecond {
+
+    margin-top: 5px;
+
+    font-size: 18px;
+
+    opacity: 0.9;
+}
+
+
+/* ZONA DE CLICK */
+
+.clickArea {
+
+    margin-top: 15px;
+
+    position: relative;
+}
+
+
+/* BOTÓN TRANSPARENTE */
+
+#zonaClick {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+
+/* FOCA */
+
+#foca {
+
+    width: min(
+        550px,
+        88vw
+    );
+
+    max-height: 55vh;
+
+    object-fit: contain;
+
+    display: block;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    filter:
+
+        drop-shadow(
+            0 20px 18px rgba(0,0,0,0.35)
+        );
+
+    transition:
+
+        transform 0.08s ease;
+}
+
+
+/* EFECTO CLICK */
+
+#zonaClick:active #foca {
+
+    transform: scale(0.94);
+}
+
+
+/* TEXTO */
+
+#mensaje {
+
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    text-shadow:
+
+        0 3px 5px rgba(0,0,0,0.4);
+}
+
+
+/* TIENDA */
+
+.shop {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background: rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+
+        0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+.shop h2 {
+
+    margin-top: 0;
+
+    font-size: 30px;
+}
+
+
+/* ELEMENTOS DE TIENDA */
+
+.upgrade {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    padding: 15px;
+
+    margin: 12px 0;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+
+.upgrade h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 21px;
+}
+
+
+.upgrade p {
+
+    margin: 4px 0;
+
+    opacity: 0.9;
+}
+
+
+/* BOTONES */
+
+.upgrade button {
+
+    min-width: 120px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #ffd83d;
+
+    color: #17334a;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 5px 0 #b99500;
+}
+
+
+.upgrade button:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.upgrade button:active {
+
+    transform: translateY(3px);
+
+    box-shadow: none;
+}
+
+
+.upgrade button:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ESTADÍSTICAS */
+
+.stats {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background: rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.stats h2 {
+
+    margin-top: 0;
+}
+
+
+.stats p {
+
+    font-size: 18px;
+}
+
+
+/* RESET */
+
+.reset {
+
+    margin-top: 20px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: rgba(0,0,0,0.3);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* BURBUJAS */
+
+.bubbles {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+.bubbles::before,
+.bubbles::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255,255,255,0.35);
+
+    bottom: -30px;
+
+    animation: bubbles 8s linear infinite;
+}
+
+
+.bubbles::after {
+
+    width: 12px;
+
+    height: 12px;
+
+    left: 70%;
+
+    animation-duration: 11s;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes bubbles {
+
+    from {
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            translateX(100px);
+
+        opacity: 0;
+
+    }
+}
+
+
+/* NÚMEROS QUE APARECEN AL HACER CLICK */
+
+.floating {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    color: #fff;
+
+    text-shadow:
+
+        0 3px 5px rgba(0,0,0,0.5);
+
+    animation: floatUp 0.8s ease-out forwards;
+
+    z-index: 100;
+}
+
+
+@keyframes floatUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-100px)
+            scale(1.4);
+
+        opacity: 0;
+
+    }
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .game {
+
+        padding-top: 15px;
+    }
+
+
+    .upgrade {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .upgrade button {
+
+        width: 100%;
+    }
+
+
+    #foca {
+
+        max-height: 48vh;
+    }
+
+}
