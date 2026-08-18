@@ -572,5 +572,3 @@ reset.addEventListener(
    ========================= */
 
 cargar();
-sonidoFoca.currentTime = 0;
-sonidoFoca.play();
